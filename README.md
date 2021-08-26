@@ -89,7 +89,7 @@ In the ***Text-Based Misinformation Detection*** and ***Text-Based Combined Misi
 
 * ***Non-Conspiracy*** This class contains all tweets not belonging to the previous two classes. Note that this also includes tweets that discuss COVID-19 pandemic itself.
 
-In the ***Text-Based Conspiracy Theories Recognition*** and ***Text-Based Combined Misinformation and Conspiracies Detection*** subtasks we use nine different categories that corresponds to the most popular conspiracy theories: *Suppressed cures*, *Mind Control*, *Antivax*, *Fake virus*, *Intentional Pandemic*, *Harmful Radiation/ Influence*, *Population reduction/ control*, *New World Order*, and *Satanism*.
+In the ***Text-Based Conspiracy Theories Recognition*** and ***Text-Based Combined Misinformation and Conspiracies Detection*** subtasks we use nine different categories that corresponds to the most popular conspiracy theories: *Suppressed cures*, *Behaviour and Mind Control*, *Antivax*, *Fake virus*, *Intentional Pandemic*, *Harmful Radiation/ Influence*, *Population reduction*, *New World Order*, and *Satanism*.
 
 
 ### Data release
@@ -112,12 +112,12 @@ The ***Text-Based Misinformation Detection*** subtask development dataset files 
 The ***Text-Based Conspiracy Theories Recognition*** subtask development dataset files are provided in CSV format with the following fields defined:
 * *TweetID* - a FakeNews task internal tweet ID, do not match with the original tweet ID.
 * *Binary Flag for Suppressed cures* - a flag indicating that the correcponding conspiracy theory is mentioned in the papticular tweet, 1 == mentioned, 0 == not mentioned (the same for the following Binary Flag fields). 
-* *Binary Flag for Mind Control* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
+* *Binary Flag for Behaviour and Mind Control* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
 * *Binary Flag for Antivax* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
 * *Binary Flag for Fake virus** - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
 * *Binary Flag for Intentional Pandemic* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
 * *Binary Flag for Harmful Radiation/ Influence* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
-* *Binary Flag for Population reduction/ control* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
+* *Binary Flag for Population reduction* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
 * *Binary Flag for New World Order* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
 * *Binary Flag for Satanism* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
 * *Tweet Text* - full tweet text block. Note that this field ends with the end of the CSV file line and it can contain extra commas that are not separators.
@@ -126,12 +126,12 @@ The ***Text-Based Conspiracy Theories Recognition*** subtask development dataset
 The ***Text-Based Combined Misinformation and Conspiracies Detection*** subtask development dataset files are provided in CSV format with the following fields defined:
 * *TweetID* - a FakeNews task internal tweet ID, do not match with the original tweet ID.
 * *Class Label for Suppressed cures* - a class identifier value for the correcponding conspiracy theory in the papticular tweet, 3 == ***Promotes/Supports Conspiracy***, 2 == ***Discusses Consparacy***, 1 == ***Non-Conspiracy*** (the same for the following Class Label fields). 
-* *Class Label for Mind Control* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Class Label for Behaviour and Mind Control* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
 * *Class Label for Antivax* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
 * *Class Label for Fake virus** - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
 * *Class Label for Intentional Pandemic* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
 * *Class Label for Harmful Radiation/ Influence* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
-* *Class Label for Population reduction/ control* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Class Label for Population reduction* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
 * *Class Label for New World Order* - aa class identifier value for the correcponding conspiracy theory in the papticular tweet. 
 * *Class Label for Satanism* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
 * *Tweet Text* - full tweet text block. Note that this field ends with the end of the CSV file line and it can contain extra commas that are not separators.
