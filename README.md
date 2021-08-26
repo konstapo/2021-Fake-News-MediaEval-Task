@@ -27,7 +27,7 @@ Spontaneous and intentional digital Fake News wildfires over online social media
 ## Task Description
 The FakeNews Detection Task offers three fake news detection subtasks on COVID-19-related conspiracy theories. The first subtask includes text-based fake news detection, the second subtask targets the detection of conspiracy theory topics, and the third subtask combines topic and conspiracy detection. All subtasks are related to misinformation disseminated in the context of the long-lasting COVID-19 crisis. We focus on conspiracy theories that assume some kind of nefarious actions by governments or other actors related to CODID-19, such as intentionally spreading the pandemic, lying about the nature of the pandemic, or using vaccines that have some hidden functionality and purpose.
 
-***Text-Based Misinformation Detection***: In this subtask, the participants receive a dataset consisting of tweet text blocks in English related to COVID-19 and various conspiracy theories. **The participants are encouraged to build a multi-class classifier that can flag whether a tweet promotes or discusses at least one of the conspiracy theories**.
+***Text-Based Misinformation Detection***: In this subtask, the participants receive a dataset consisting of tweet text blocks in English related to COVID-19 and various conspiracy theories. **The participants are encouraged to build a multi-class classifier that can flag whether a tweet promotes/supports or discusses at least one (or many) of the conspiracy theories**. In the case if the particular tweet promotes/supports one conspiracy theory and just discusses another, the result of the detection for the particular tweet is experted to be equal to "**stronger**" class: promote/support in the given sample.
 
 ***Text-Based Conspiracy Theories Recognition***: In this subtask, the participants receive a dataset consisting of tweet text blocks in English related to COVID-19 and various conspiracy theories. **The main goal of this subtask is to build a detector that can detect whether a text in any form mentions or refers to any of the predefined conspiracy topics**.
 
@@ -136,6 +136,9 @@ The ***Text-Based Combined Misinformation and Conspiracies Detection*** subtask 
 * *Class Label for Satanism* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
 * *Tweet Text* - full tweet text block. Note that this field ends with the end of the CSV file line and it can contain extra commas that are not separators.
 
+*All CSV files use comma as a field separator. Note that fields that corresponds to *Tweet Text* ends with the end of the CSV file line and can contain extra commas that are not separators, but parts of the tweet text content*.
+
+*All CSV files are UTF-8 encoded and stored in Linux-style text file format using only one line ending character (0x0A in hex, '\n' in C/C++)*.
 
 
 #### Test Sets
