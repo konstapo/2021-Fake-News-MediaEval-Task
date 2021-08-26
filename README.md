@@ -3,7 +3,7 @@
 
 The FakeNews task explores various machine-learning approaches to automatically detect misinformation and its spreaders in social networks.
 
-Spontaneous and intentional digital Fake News wildfires over online social media can be as dangerous as natural fires. A new generation of data mining and analysis algorithms is required for early detection and tracking of such information cascades. This task focuses on the analysis of tweets related to Coronavirus and 5G conspiracy theories in order to detect misinformation spreaders.
+Spontaneous and intentional digital Fake News wildfires over online social media can be as dangerous as natural fires. A new generation of data mining and analysis algorithms is required for early detection and tracking of such information cascades. This task focuses on the analysis of tweets related to Coronavirus conspiracy theories in order to detect misinformation spreaders.
 
 
 ## Announcements
@@ -25,18 +25,18 @@ Spontaneous and intentional digital Fake News wildfires over online social media
 
 
 ## Task Description
-The FakeNews Detection Task offers three fake news detection subtasks on COVID-19-related conspiracy theories. The first subtask includes text-based fake news detection, the second subtask targets the detection of abnormal spreading patterns, and the third subtask tackles the emerging conspiracy topics detection. All subtasks are related to misinformation disseminated in the context of the long-lasting COVID-19 crisis. We focus on the well-known conspiracy theories that assume a causal relationship between various human activities and new technologies and COVID-19 virus, but text blocks and spreading graphs that talks about non-conspiracy CODID-19-related topics, e.g., vaccination are presented and labelled as well. 
+The FakeNews Detection Task offers three fake news detection subtasks on COVID-19-related conspiracy theories. The first subtask includes text-based fake news detection, the second subtask targets the detection of conspiracy theory topics, and the third subtask combines topic and conspiracy detection. All subtasks are related to misinformation disseminated in the context of the long-lasting COVID-19 crisis. We focus on conspiracy theories that assume some kind of nefarious actions by governments or other actors related to CODID-19, such as intentionally spreading the pandemic, lying about the nature of the pandemic, or using vaccines that have some hidden functionality and purpose.
 
 ***Text-Based Misinformation Detection***: In this subtask, the participants receive a dataset consisting of tweet text blocks in English related to COVID-19 and various conspiracy theories. **The participants are encouraged to build a multi-class classifier that can flag whether a tweet promotes or discusses at least one of the conspiracy theories**.
 
 ***Text-Based Conspiracy Theories Recognition***: In this subtask, the participants receive a dataset consisting of tweet text blocks in English related to COVID-19 and various conspiracy theories. **The main goal of this subtask is to build a detector that can detect whether a text in any form mentions or refers to any of the predefined conspiracy topics**.
 
-***Text-Based Combined Misinformation and Conspiracies Detection***: In this subtask, the participants receive a dataset consisting of tweet text blocks in English related to COVID-19 and various conspiracy theories. **The goal of this subtask is to build a complex multi-labelling multi-class detector that can predict whether a tweet promotes/supports or just discusses topicks from the predefined conspiracy theories set. And if promoting/supporting is detected  - compute probabilities of promoting/supporting the particular conspiracy theory**.
+***Text-Based Combined Misinformation and Conspiracies Detection***: In this subtask, the participants receive a dataset consisting of tweet text blocks in English related to COVID-19 and various conspiracy theories. **The goal of this subtask is to build a complex multi-labelling multi-class detector that for each topic from a list of predefined conspiracy topics can predict whether a tweet promotes/supports or just discusses that particular topic**.
 
 
 
 #### Motivation and Background
-Digital wildfires, i.e., fast-spreading inaccurate, counterfactual, or intentionally misleading information, can quickly permeate public consciousness and have severe real-world implications, and they are among the top global risks in the 21st century. While a sheer endless amount of misinformation exists on the internet, only a small fraction of it spreads far and affects people to a degree where they commit harmful and/or criminal acts in the real world. The COVID-19 pandemic has severely affected people worldwide, and consequently, it has dominated world news for months. Thus, it is no surprise that it has also been the topic of a massive amount of misinformation, which was most likely amplified by the fact that many details about the virus were unknown at the start of the pandemic. This task is aiming development of methods capable of detecting such misinformation and its active spreaders. We consider primarily the narrative that *the COVID-19 outbreak is a deliberate consequence of human activity or is somehow connected to emerging technologies*, covering various conspiracy theories about COVID-19.  
+Digital wildfires, i.e., fast-spreading inaccurate, counterfactual, or intentionally misleading information, can quickly permeate public consciousness and have severe real-world implications, and they are among the top global risks in the 21st century. While a sheer endless amount of misinformation exists on the internet, only a small fraction of it spreads far and affects people to a degree where they commit harmful and/or criminal acts in the real world. The COVID-19 pandemic has severely affected people worldwide, and consequently, it has dominated world news for months. Thus, it is no surprise that it has also been the topic of a massive amount of misinformation, which was most likely amplified by the fact that many details about the virus were unknown at the start of the pandemic. This task aims at the development of methods capable of detecting such misinformation. Since many different misinformation narratives exist, such methods must be capable of distinguishing between them. For that reason we consider a variety of well-known conspiracy theories related to COVID-19.  
 
 
 #### Target Group
@@ -44,7 +44,7 @@ The task is of interest to researchers in the areas of online news, social media
 
 
 #### Data
-The dataset contains several sets of tweet texts mentioning Corona Virus and different conspiracy theories. The dataset set consists of only English language posts and it contains a variety of long tweets with neutral, positive, negative, and sarcastic phrasing. The datasets is ***not balanced*** with respect to the number of samples of conspiracy-promoting and other tweets, and the number of tweets per each conspiracy class. The dataset items have been collected from Twitter during a period between 1st of January 2020 and 15th of May 2021, by searching for the Corona-virus-related keywords (e.g., "corona", "COVID-19", etc.) inside the tweets' text. Since not all tweets are available online, the partipants will be provided a full-text set of already downloaded tweets. In order to be compliant with the Twitter Developer Policy, only the members of the participants' participating temas are allowed to access and use the provided dataset. Distribution, publication, sharing and any form of usage of the provided data apart of the research purposes within the FakeNews task is strictly prohibited. A copy of the dataset in form of Tweet ID and annotations will be puplished after the end of MediaEval 2021.
+The dataset contains several sets of tweet texts mentioning Corona Virus and different conspiracy theories. The dataset set consists of only English language posts and it contains a variety of long tweets with neutral, positive, negative, and sarcastic phrasing. The datasets is ***not balanced*** with respect to the number of samples of conspiracy-promoting and other tweets, and the number of tweets per each conspiracy class. The dataset items have been collected from Twitter during a period between 20th of January 2020 and 31st of July 2021, by searching for the Corona-virus-related keywords (e.g., "corona", "COVID-19", etc.) inside the tweets' text, followed by a search for keywords related to the conspiracy theories. Since not all tweets are available online, the partipants will be provided a full-text set of already downloaded tweets. In order to be compliant with the Twitter Developer Policy, only the members of the participants' participating temas are allowed to access and use the provided dataset. Distribution, publication, sharing and any form of usage of the provided data apart of the research purposes within the FakeNews task is strictly prohibited. A copy of the dataset in form of Tweet ID and annotations will be published after the end of MediaEval 2021.
 
 
 
@@ -81,44 +81,64 @@ The dataset consists of three development and three test sets containing full-te
 
 ### Ground Truth
 
-In ***Text-Based Misinformation Detection*** and ***Text-Based Combined Misinformation and Conspiracies Detection*** subtasks we use three different class labels to mark the tweet contents: *Promotes/Supports Conspiracy*, *Discusses Consparacy* and *Non-Conspiracy*.
+In the ***Text-Based Misinformation Detection*** and ***Text-Based Combined Misinformation and Conspiracies Detection*** subtasks we use three different class labels to mark the tweet contents: *Promotes/Supports Conspiracy*, *Discusses Consparacy* and *Non-Conspiracy*.
 
-***Promotes/Supports Conspiracy*** This class contains all tweets that promotes, supports, claim, insinuate some connection between COVID-19 and various conspiracies, such as, for example, the idea that 5G weakens the immune system and thus caused the current corona-virus pandemic; that there is no pandemic and the COVID-19 victims were actually harmed by radiation emitted by 5G network towers; ideas about an intentional release of the virus, forced or harmful vaccinations, or the virus being a hoax, etc. The crucial requirement is the claimed existence of some causal link.
+* ***Promotes/Supports Conspiracy*** This class contains all tweets that promotes, supports, claim, insinuate some connection between COVID-19 and various conspiracies, such as, for example, the idea that 5G weakens the immune system and thus caused the current corona-virus pandemic; that there is no pandemic and the COVID-19 victims were actually harmed by radiation emitted by 5G network towers; ideas about an intentional release of the virus, forced or harmful vaccinations, or the virus being a hoax, etc. The crucial requirement is the claimed existence of some causal link.
 
-***Discusses Consparacy*** This class contains all tweets that just mentioning the existing various conspiracies connected to COVID-19, or negating such a connection in clearly negative or sarcastic maneer.
+* ***Discusses Consparacy*** This class contains all tweets that just mentioning the existing various conspiracies connected to COVID-19, or negating such a connection in clearly negative or sarcastic maneer.
 
-***Non-Conspiracy*** This class contains all tweets not belonging to the previous two classes. Note that this also includes tweets that discuss COVID-19 pandemic itself.
+* ***Non-Conspiracy*** This class contains all tweets not belonging to the previous two classes. Note that this also includes tweets that discuss COVID-19 pandemic itself.
+
+In the ***Text-Based Conspiracy Theories Recognition*** and ***Text-Based Combined Misinformation and Conspiracies Detection*** subtasks we use nine different categories that corresponds to the most popular conspiracy theories: *Suppressed cures*, *Mind Control*, *Antivax*, *Fake virus*, *Intentional Pandemic*, *Harmful Radiation/ Influence*, *Population reduction/ control*, *New World Order*, and *Satanism*.
 
 
 ### Data release
 
-#### Development Set
+##### Development Sets
 
 The following files are provided:
 
-##### First Development Set
+* `dev-<N>.zip` contains all the files of the N-th (first, second and third) development sets and is sent directly to the participants.
 
-* `dev-1.zip` contains all the files of the first development set and is sent directly to the participants.
-
-* `dev-1.zip/phase-1-task-1-dev.csv` zipped file contains all the Tweets for ***Text-Based Misinformation Detection*** subtask
-* `dev-1.zip/phase-1-task-2-dev.csv` zipped file contains all the Tweets for ***Text-Based Conspiracy Theories Recognition*** subtask
-* `dev-1.zip/phase-1-task-3-dev.csv` zipped file contains all the Tweets for ***Text-Based Combined Misinformation and Conspiracies Detection*** subtask
-
-
-#### Data format definition
+* `dev-<N>.zip/dev-<N>-task-1.csv` zipped file contains all the Tweets for ***Text-Based Misinformation Detection*** subtask
+* `dev-<N>.zip/dev-<N>-task-2.csv` zipped file contains all the Tweets for ***Text-Based Conspiracy Theories Recognition*** subtask
+* `dev-<N>.zip/dev-<N>-task-3.csv` zipped file contains all the Tweets for ***Text-Based Combined Misinformation and Conspiracies Detection*** subtask
 
 The ***Text-Based Misinformation Detection*** subtask development dataset files are provided in CSV format with the following fields defined:
 * *TweetID* - a FakeNews task internal tweet ID, do not match with the original tweet ID.
-* *Class Label* - a class identifier value, 3 == ***Promotes/Supports Conspiracy***, 2 == ***Discusses Consparacy***, 1 == ***Non-Conspiracy*** 
+* *Class Label* - a class identifier value, 3 == ***Promotes/Supports Conspiracy***, 2 == ***Discusses Consparacy***, 1 == ***Non-Conspiracy***.
+* *Tweet Text* - full tweet text block. Note that this field ends with the end of the CSV file line and it can contain extra commas that are not separators.
+
+The ***Text-Based Conspiracy Theories Recognition*** subtask development dataset files are provided in CSV format with the following fields defined:
+* *TweetID* - a FakeNews task internal tweet ID, do not match with the original tweet ID.
+* *Binary Flag for Suppressed cures* - a flag indicating that the correcponding conspiracy theory is mentioned in the papticular tweet, 1 == mentioned, 0 == not mentioned (the same for the following Binary Flag fields). 
+* *Binary Flag for Mind Control* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
+* *Binary Flag for Antivax* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
+* *Binary Flag for Fake virus** - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
+* *Binary Flag for Intentional Pandemic* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
+* *Binary Flag for Harmful Radiation/ Influence* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
+* *Binary Flag for Population reduction/ control* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
+* *Binary Flag for New World Order* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
+* *Binary Flag for Satanism* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
+* *Tweet Text* - full tweet text block. Note that this field ends with the end of the CSV file line and it can contain extra commas that are not separators.
+
+
+The ***Text-Based Combined Misinformation and Conspiracies Detection*** subtask development dataset files are provided in CSV format with the following fields defined:
+* *TweetID* - a FakeNews task internal tweet ID, do not match with the original tweet ID.
+* *Class Label for Suppressed cures* - a class identifier value for the correcponding conspiracy theory in the papticular tweet, 3 == ***Promotes/Supports Conspiracy***, 2 == ***Discusses Consparacy***, 1 == ***Non-Conspiracy*** (the same for the following Class Label fields). 
+* *Class Label for Mind Control* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Class Label for Antivax* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Class Label for Fake virus** - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Class Label for Intentional Pandemic* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Class Label for Harmful Radiation/ Influence* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Class Label for Population reduction/ control* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Class Label for New World Order* - aa class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Class Label for Satanism* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
 * *Tweet Text* - full tweet text block. Note that this field ends with the end of the CSV file line and it can contain extra commas that are not separators.
 
 
 
-#### Test Set
-
-**TBA**
-
-#### Test Set Labels
+#### Test Sets
 
 **TBA**
 
