@@ -1,5 +1,5 @@
-# FakeNews: FakeNews: Corona Virus and Conspiracies Multimedia Analysis Task
-## Fighting against misinformation spreading
+# FakeNews: Corona Virus and Conspiracies Multimedia Analysis Task
+### Fighting against misinformation spreading
 
 The FakeNews task explores various machine-learning approaches to automatically detect misinformation and its spreaders in social networks.
 
