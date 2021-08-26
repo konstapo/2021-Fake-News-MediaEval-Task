@@ -109,6 +109,7 @@ The ***Text-Based Misinformation Detection*** subtask development dataset files 
 * *Class Label* - a class identifier value, 3 == ***Promotes/Supports Conspiracy***, 2 == ***Discusses Consparacy***, 1 == ***Non-Conspiracy***.
 * *Tweet Text* - full tweet text block. Note that this field ends with the end of the CSV file line and it can contain extra commas that are not separators.
 
+
 The ***Text-Based Conspiracy Theories Recognition*** subtask development dataset files are provided in CSV format with the following fields defined:
 * *TweetID* - a FakeNews task internal tweet ID, do not match with the original tweet ID.
 * *Binary Flag for Suppressed cures* - a flag indicating that the correcponding conspiracy theory is mentioned in the papticular tweet, 1 == mentioned, 0 == not mentioned (the same for the following Binary Flag fields). 
@@ -135,6 +136,7 @@ The ***Text-Based Combined Misinformation and Conspiracies Detection*** subtask 
 * *Class Label for New World Order* - aa class identifier value for the correcponding conspiracy theory in the papticular tweet. 
 * *Class Label for Satanism* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
 * *Tweet Text* - full tweet text block. Note that this field ends with the end of the CSV file line and it can contain extra commas that are not separators.
+
 
 *All CSV files use comma as a field separator. Note that fields that corresponds to *Tweet Text* ends with the end of the CSV file line and can contain extra commas that are not separators, but parts of the tweet text content*.
 
