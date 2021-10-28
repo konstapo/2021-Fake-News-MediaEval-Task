@@ -57,17 +57,14 @@ Evaluation will be performed using standard implementation of the multi-class ge
 
 ## Task Steps
 
-This year we will be running the task in a close-to-real-world problem solving mode. Instead of one-moment development dataset release, we split all the development dataset into three different. Consequentially, the task will be run in three-phase mode when participants encouraged to build their classifiers using the initially limited development set. After some development time the first test set will be send out and the participants are required to perform an intermediate evaluation of their algorithms submitting only one best run results. After the intermediate results submission, the second development set will be released allowing for further adjustment of the task solving algorithms.This is intermediate evaluation and additional development dataset release is repeated two times in total giving three development and two intermediate test sets. The final test set will be released shortly before the final runs submission deadline.
+This year we will be running the task in a close-to-real-world problem solving mode. Instead of one-moment development dataset release, we split all the development dataset into the initial and the full sets. Consequentially, the task will be run in two-phase mode when participants encouraged to build their classifiers using the initially limited development set. After some development time the full development set will be send out and the participants are asked to perform an additional adjustment and retraining of the task solving algorithms. The official test set will be released shortly before the final runs submission deadline.
 
 All-in-all, participation in this task involves the following steps:
 1. Receive the first development data and design your approach using the first development set.
-2. Receive the first test set, run your system on the first test data and submit one run results.
-3. Receive the second development data and design your approach using the combination of the first and second development sets.
-4. Receive the second test set, run your system on the second test data and submit one run results.
-6. Receive the third development data and design your approach using the combination of the first, second and third development sets.
-7. When the final test set is released, run your system on the final test data and submit up to 5 runs.
-8. Receive your evaluation results (in terms of the official evaluation metric of the task), which you must report in the working notes paper.
-9. Write and submit your working notes paper; different test runs of the final and intermediate test steps must all be described.
+2. Receive the full development data and tune your approach using the full development set.
+3. When the test set is released, run your system on the test data and submit up to 5 runs.
+4. Receive your evaluation results (in terms of the official evaluation metric of the task), which you must report in the working notes paper.
+5. Write and submit your working notes paper; all different submitted test runs must be described. You can include any other evaluation results if needed.
 
 
 ## Dataset
