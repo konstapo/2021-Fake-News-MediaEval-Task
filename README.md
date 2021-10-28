@@ -7,21 +7,18 @@ Spontaneous and intentional digital Fake News wildfires over online social media
 
 
 ## Announcements
-* **25 August 2021:** The development set is sent to the participants.
-
+* **25 August 2021:** The initial development set is sent to the participants.
+* **21 Oktober 2021:** The full development set is sent to the participants.
+* **27 Oktober 2021:** The MediaEval 2021 Workshop is scheduled one week later, new dates are 13-15 December.
 
 ## Task Schedule
-* 25 August: First development set release
-* *TBA*: First intermediate test release
-* *TBA*: Second development set release
-* *TBA*: Second intermediate test release
-* *TBA*: Third development set release
-* 2 November: Final test set release
-* 10 November: Runs due <!-- # Replace XX with your date. We suggest setting enough time in order to have enough time to assess and return the results by the Results returned deadline-->
-* 15 November: Results returned  <!-- Replace XX with your date. Latest possible should be 15 November-->
-* 22 November: Working notes paper due  <!-- Fixed. Please do not change. Exact date to be decided-->
-* Beginning December: MediaEval 2021 Workshop  <!-- Fixed. Please do not change. Exact date to be decided-->
-
+* 25 August: Initial development set release
+* 21 October: Full development set release
+* 14 November: Final test set release
+* 19 November: Runs due <!-- # Replace XX with your date. We suggest setting enough time in order to have enough time to assess and return the results by the Results returned deadline-->
+* 22 November: Results returned  <!-- Replace XX with your date. Latest possible should be 15 November-->
+* 29 November: Working notes paper due  <!-- Fixed. Please do not change. Exact date to be decided-->
+* 13 December - 15 December, 14:00-18:30 CET (UTC+1): MediaEval 2021 Workshop  <!-- Fixed. Please do not change. Exact date to be decided-->
 
 
 ## Task Description
@@ -98,11 +95,11 @@ In the ***Text-Based Conspiracy Theories Recognition*** and ***Text-Based Combin
 
 The following files are provided:
 
-* `dev-<N>.zip` contains all the files of the N-th (first, second and third) development sets and is sent directly to the participants.
+* `dev.zip` contains all the files of development set and is sent directly to the participants.
 
-* `dev-<N>.zip/dev-<N>-task-1.csv` zipped file contains all the Tweets for ***Text-Based Misinformation Detection*** subtask
-* `dev-<N>.zip/dev-<N>-task-2.csv` zipped file contains all the Tweets for ***Text-Based Conspiracy Theories Recognition*** subtask
-* `dev-<N>.zip/dev-<N>-task-3.csv` zipped file contains all the Tweets for ***Text-Based Combined Misinformation and Conspiracies Detection*** subtask
+* `dev.zip/dev-task-1.csv` zipped file contains all the Tweets for ***Text-Based Misinformation Detection*** subtask
+* `dev.zip/dev-task-2.csv` zipped file contains all the Tweets for ***Text-Based Conspiracy Theories Recognition*** subtask
+* `dev.zip/dev-task-3.csv` zipped file contains all the Tweets for ***Text-Based Combined Misinformation and Conspiracies Detection*** subtask
 
 The ***Text-Based Misinformation Detection*** subtask development dataset files are provided in CSV format with the following fields defined:
 * *TweetID* - a FakeNews task internal tweet ID, do not match with the original tweet ID.
@@ -193,6 +190,8 @@ The ***Text-Based Combined Misinformation and Conspiracies Detection*** subtask 
 * Johannes Langguth, Simula Research laboratory (Simula), Norway, langguth (at) simula.no
 * Daniel Thilo Schroeder, Simula Research laboratory (Simula), Norway
 
+#### Task auxiliaries
+* Özlem Özgöbek, Norwegian University of Science and Technology (NTNU), Norway
 
 ## Acknowledgements
 
