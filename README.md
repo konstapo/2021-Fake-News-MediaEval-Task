@@ -226,6 +226,8 @@ ME21FND_YYY_ZZZ.txt
 
 where ME21FND is the code of the task, YYY is the acronym of your team and ZZZ is the number of your run. For the ***Text-Based Misinformation Detection*** subtask run numbers are 001, 002, 003, 004 and 005. For the ***Text-Based Conspiracy Theories Recognition*** subtask run numbers are 101, 102, 103, 104 and 105. For the ***Text-Based Combined Misinformation and Conspiracies Detection*** subtask run numbers are 201, 202, 203, 204 and 205. 
 
+*All run CSV files should use comma as a field separator, be UTF-8 encoded and stored in Linux-style text file format using only one line ending character (0x0A in hex, '\n' in C/C++)*.
+
 Instructions about where to upload the resulting runs will follow.
 
 
