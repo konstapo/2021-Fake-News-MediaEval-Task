@@ -7,9 +7,10 @@ Spontaneous and intentional digital Fake News wildfires over online social media
 
 
 ## Announcements
-* **25 August 2021:** The initial development set is sent to the participants.
-* **21 Oktober 2021:** The full development set is sent to the participants.
+* **1 November 2021:** The runs submittion formats are published.
 * **27 Oktober 2021:** The MediaEval 2021 Workshop is scheduled one week later, new dates are 13-15 December.
+* **21 Oktober 2021:** The full development set is sent to the participants.
+* **25 August 2021:** The initial development set is sent to the participants.
 
 ## Task Schedule
 * 25 August: Initial development set release
