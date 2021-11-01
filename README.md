@@ -137,7 +137,12 @@ The ***Text-Based Combined Misinformation and Conspiracies Detection*** subtask 
 *All CSV files are UTF-8 encoded and stored in Linux-style text file format using only one line ending character (0x0A in hex, '\n' in C/C++)*.
 
 
-#### Test Sets
+#### Pre-flight Test Sets
+
+**TBA**
+
+
+#### Full Test Sets
 
 **TBA**
 
@@ -146,10 +151,109 @@ The ***Text-Based Combined Misinformation and Conspiracies Detection*** subtask 
 
 ### Run Submissions
 
-**TBA**
+For this task, you may submit up to 5 runs for each of the three subtasks (***Text-Based Misinformation Detection***, ***Text-Based Conspiracy Theories Recognition***, and ***Text-Based Combined Misinformation and Conspiracies Detection***). Please be sure to submit the following types of runs for each of the listed subtasks:
+
+1. **Required run:** automated tweet content classification based *only* on the provided in the development dataset tweet texts. It is not allowed to use any external data and any already pre-trained models in this run.
+
+2. Optional run: automated tweet content classification using the provided tweet text and any publicly available pre-trained linguistic and NLP models re-trained or fine-tuned using the proveded development set. No additional training data is allowed to be feed into the model during training process apart of the provided development dataset.
+
+3-5. Optional runs: relaxed automated tweet classification using any automatically scraped data from any external sources and using any external pre-trained models.
+
+Please note that for generating runs 1 to 2 in both subtasks participants are allowed to use only information that can be extracted from the provided tweets, while for runs 3 to 5 everything is allowed, both from the method point of view and the information sources. However, manual annotation of tweets of the provided test set is not allowed in any run.
+
+### Submission Format
+
+***Text-Based Misinformation Detection*** subtask:
+Please submit runs in CSV format with the following fields defined:
+* *TweetID* - tweet ID matching the test dataset tweet ID.
+* *Assigned Class Label* - a class identifier value, 3 == ***Promotes/Supports Conspiracy***, 2 == ***Discusses Consparacy***, 1 == ***Non-Conspiracy***, 0 == ***Cannot Determine***.
+Tweet IDs and the labels should be comma-separated. An example should look like this:
+
+```
+1,3
+2,1
+...
+175,2
+```
+
+***Text-Based Conspiracy Theories Recognition*** subtask:
+Please submit runs in CSV format with the following fields defined:
+* *TweetID* - tweet ID matching the test dataset tweet ID.
+* *Assigned Binary Flag for Suppressed cures* - a flag indicating that the correcponding conspiracy theory is mentioned in the papticular tweet, 1 == ***mentioned***, 0 == ***not mentioned***, -1 == ***cannot determine*** (the same for the following Binary Flag fields). 
+* *Assigned Binary Flag for Behaviour and Mind Control* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
+* *Assigned Binary Flag for Antivax* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
+* *Assigned Binary Flag for Fake virus** - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
+* *Assigned Binary Flag for Intentional Pandemic* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
+* *Assigned Binary Flag for Harmful Radiation/ Influence* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
+* *Assigned Binary Flag for Population reduction* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
+* *Assigned Binary Flag for New World Order* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
+* *Assigned Binary Flag for Satanism* - a flag indicating that the correcponding conspiracy theory is mentioned in the rapticular tweet.
+Tweet IDs and the labels should be comma-separated. An example should look like this:
+
+```
+1,0,0,0,1,0,0,1,0,-1
+2,0,0,0,0,0,0,0,0,0
+...
+150,1,1,0,0,0,0,0,0,0
+```
+
+***Text-Based Combined Misinformation and Conspiracies Detection*** subtask:
+Please submit runs in CSV format with the following fields defined:
+* *TweetID* - tweet ID matching the test dataset tweet ID.
+* *Assigned Class Label for Suppressed cures* - a class identifier value for the correcponding conspiracy theory in the papticular tweet, 3 == ***Promotes/Supports Conspiracy***, 2 == ***Discusses Consparacy***, 1 == ***Non-Conspiracy***, 0 == ***Cannot Determine*** (the same for the following Class Label fields). 
+* *Assigned Class Label for Behaviour and Mind Control* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for Antivax* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for Fake virus** - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for Intentional Pandemic* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for Harmful Radiation/ Influence* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for Population reduction* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for New World Order* - aa class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+* *Assigned Class Label for Satanism* - a class identifier value for the correcponding conspiracy theory in the papticular tweet. 
+Tweet IDs and the labels should be comma-separated. An example should look like this:
+
+```
+1,1,1,1,3,1,1,1,1,0
+2,1,1,1,1,1,1,1,1,1
+...
+150,2,2,1,1,1,1,1,1,1
+```
+
+Please note that no white spaces or other special characters are allowed in the run files. When you create the filenames for your runs, please follow this pattern:
+
+```
+ME21FND_YYY_ZZZ.txt
+```
+
+where ME21FND is the code of the task, YYY is the acronym of your team and ZZZ is the number of your run. For the ***Text-Based Misinformation Detection*** subtask run numbers are 001, 002, 003, 004 and 005. For the ***Text-Based Conspiracy Theories Recognition*** subtask run numbers are 101, 102, 103, 104 and 105. For the ***Text-Based Combined Misinformation and Conspiracies Detection*** subtask run numbers are 201, 202, 203, 204 and 205. 
+
+Instructions about where to upload the resulting runs will follow.
 
 
-#### References and recommended reading
+### Cannot Determine label explanation
+
+This additional class is important when evaluating the multi-class classifiers. It is described in the related literature how it affects this metric, but in simple words: marking a sample that classifier cannot really understand as an *unknown class* affects the classification performance less negatively than marking the sample with a wrong class label. Exactly as it expected to be in the real-world classification tasks. Simple experiments can be conducted with *sklearn.metrics.matthews_corrcoef* function to see the effect of the additional 'Cannot Determine' class that does not exist in the development set. The sample code in Python that demomnstrates the effects of this additional class:
+
+```
+import sklearn.metrics
+y_true = ["1", "2", "3", "1"]
+y_pred = ["1", "2", "3", "1"]
+print(sklearn.metrics.matthews_corrcoef(y_true, y_pred))
+y_true = ["1", "2", "3", "1"]
+y_pred = ["1", "3", "2", "1"]
+print(sklearn.metrics.matthews_corrcoef(y_true, y_pred))
+y_true = ["1", "2", "3", "1"]
+y_pred = ["1", "0", "2", "1"]
+print(sklearn.metrics.matthews_corrcoef(y_true, y_pred))
+y_true = ["1", "2", "3", "1"]
+y_pred = ["1", "0", "0", "1"]
+print(sklearn.metrics.matthews_corrcoef(y_true, y_pred))
+y_true = ["1", "2", "3", "1"]
+y_pred = ["0", "0", "0", "0"]
+print(sklearn.metrics.matthews_corrcoef(y_true, y_pred))
+```
+
+
+## References and recommended reading
 
 ***General***
 
