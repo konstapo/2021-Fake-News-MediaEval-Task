@@ -7,17 +7,18 @@ Spontaneous and intentional digital Fake News wildfires over online social media
 
 
 ## Announcements
+* **18 November 2021:** The test dataset is sent to the participants.
 * **1 November 2021:** The runs submittion formats are published.
-* **27 Oktober 2021:** The MediaEval 2021 Workshop is scheduled one week later, new dates are 13-15 December.
-* **21 Oktober 2021:** The full development set is sent to the participants.
+* **27 October 2021:** The MediaEval 2021 Workshop is scheduled one week later, new dates are 13-15 December.
+* **21 October 2021:** The full development set is sent to the participants.
 * **25 August 2021:** The initial development set is sent to the participants.
 
 ## Task Schedule
 * 25 August: Initial development set release
 * 21 October: Full development set release
-* 14 November: Final test set release
-* 19 November: Runs due <!-- # Replace XX with your date. We suggest setting enough time in order to have enough time to assess and return the results by the Results returned deadline-->
-* 22 November: Results returned  <!-- Replace XX with your date. Latest possible should be 15 November-->
+* 18 November: Final test set release
+* 24 November: Runs due <!-- # Replace XX with your date. We suggest setting enough time in order to have enough time to assess and return the results by the Results returned deadline-->
+* 25 November: Results returned  <!-- Replace XX with your date. Latest possible should be 15 November-->
 * 29 November: Working notes paper due  <!-- Fixed. Please do not change. Exact date to be decided-->
 * 13 December - 15 December, 14:00-18:30 CET (UTC+1): MediaEval 2021 Workshop  <!-- Fixed. Please do not change. Exact date to be decided-->
 
@@ -138,14 +139,12 @@ The ***Text-Based Combined Misinformation and Conspiracies Detection*** subtask 
 *All CSV files are UTF-8 encoded and stored in Linux-style text file format using only one line ending character (0x0A in hex, '\n' in C/C++)*.
 
 
-#### Pre-flight Test Sets
-
-**TBA**
-
 
 #### Full Test Sets
 
-**TBA**
+Test sets fot all three subtasks consist of CSV files with the following structure.
+* *TweetID* - a FakeNews task internal tweet ID, do not match with the original tweet ID.
+* *Tweet Text* - full tweet text block. Note that this field ends with the end of the CSV file line and it can contain extra commas that are not separators.
 
 
 ## Submission
